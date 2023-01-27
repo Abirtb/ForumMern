@@ -2,7 +2,6 @@
 const isEmpty = require("./is-empty");
 const validator = require("validator");
 module.exports = function validateProfileInput(data) {
-  console.log(data.website);
   let errors = {};
 
   data.handle = !isEmpty(data.handle) ? data.handle : ""; //? if and : else
@@ -23,7 +22,6 @@ module.exports = function validateProfileInput(data) {
     errors.skills = "skills field is required";
   }
   if (!isEmpty(data.website)) {
-    console.log(555);
     if (!validator.isURL(data.website)) {
       errors.website = "not a valid url";
     }

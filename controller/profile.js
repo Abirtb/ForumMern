@@ -136,7 +136,6 @@ const CreateExperience = async (req, res) => {
 
   //check validation
   if (!IsValid) {
-    console.log(11111);
     return res.status(400).json(errors);
   }
   profile = await Profile.findOne({ user: req.user.id });

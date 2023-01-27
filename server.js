@@ -6,6 +6,14 @@ const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
 const app = express();
+const session = require('express-session');
+
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 // body parser midlleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

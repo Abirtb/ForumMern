@@ -41,7 +41,7 @@ router.get("/handle/:handle",ProfileByHandle );
 // @route GET api/profile
 // @desc create or edit user profile
 // @access private
-router.get("/user/:user_id",ProfileById);
+router.get("/user/:user_id",auth,ProfileById);
 router.post( "/",auth, CreateOrEditProfile )
 // @route GET api/profile/experience
 // @desc add experience to profile
